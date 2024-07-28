@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-mMouy5FE2x/3l6NRo+KisNu6Luv8Ibl2c6k1KQ5hYy6tDy7idOe00M7jx7GzJ8rYl5GWc6Ex47XfK7TbFd1xGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Harihara Temple</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #AFDDf9;
+            color: #1e1d1d;
+        }
+
+        header {
+            background-color: #0FA4AF;
+            padding: 10px 20px;
+            color: #0FA4AF;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0%;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9534f;
+        }
+
+        .header-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #AFDDE5;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #architecture {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .architecture-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .architecture-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .event-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img{
+            filter: drop-shadow(10px 10px 10px 20px rgb(87, 87, 87)); 
+        }
+
+        .event-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #a17e7e;
+            padding: 10px;
+            text-align: left;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: #f0ad4e;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .organizers {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+
+        .location {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .location a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .location a:hover {
+            color: #d9534f;
+        }
+
+        
+            
+            .footer {
+    text-align: center;
+    margin-top: 0px;
+    padding: 10px; /* Adjust padding as needed */
+    background-color: #0FA4AF;
+    color: #333;
+    border-top: 5px solid #333; 
+    border-bottom: 5px solid #333;/* Adds a thicker border on top */
+    bottom: 0;
+    width: 100%;
+}
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .mySlides img {
+            transition: transform 0.5s ease;
+            cursor: zoom-in;
+        }
+
+        .mySlides:hover img {
+            transform: scale(1.5); /* Adjust the scale as needed */
+            cursor: zoom-out;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .caption {
+            color: #000;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <i class="fas fa-star"></i> HARIHARA TEMPLE <i class="fas fa-star"></i>
+        </div>
+        <nav>
+            <a href="#history">History</a>
+            <a href="#event">Events</a>
+            <a href="#renovation">Renovation</a>
+            <a href="#photographs">Photographs</a>
+            <a href="#location">Location</a>
+        </nav>
+    </header>
+    
+        <div class="container">
+            <h1>The History Of Harihara Temple Karnad Mulky</h1>
+        
+        <p id="history">Shri Hari-Hara Kshetra of Mulki “SEEME” in Dakshina Kannada district is one of the ancient holy temples like Bappanadu temple. History states that Shri Vishnumurthy and Eshwara (Harihara) temples were constructed in about the 12th-13th century. The unique feature here is that Vishnu and Shiva idols are consecrated and stationed 80 yards apart, face-to-face, which reflects the unity and integrity among Vaishnavas and Shivas. Hari-Hara Eshwar temple is located on Karnad bypass road, at Mulki. The temple boasts traditions from the 12th and 13th century. One Vishnu temple is located just opposite, facing east, and now Hari-Hari Kshetra is under full renovation. The unique features of both temples, which are located 80 yards facing each other, reflect the unity and integrity among Vaishnavas and Shiva bhaktas.</p>
+       
+        <hr>
+
+        <h2 id="architecture" class="section-title">Architecture Style</h2>
+        <div class="architecture-image">
+            <img src="harihara.jpg" alt="architecture image">
+        </div>
+
+        <p>Constructed as per the Ancient Architectural Science. It is significant that the Mangalarathi from one Garbagriha is visible to Garbagriha of the other temple. A large pond separates two temples which is in a dilapidated condition today and it remains only as a symbolic monument of its past glory. Shri Vishnumurty temple, which was under a pathetic condition, was renovated with the help of generous donations from locals as well as devotees spread in places like Bangalore, Pune, Kalyana, and Mumbai at a cost of Rs. 40 lakhs in 2001 and 2002. Special rituals like re-installation of the idol, reconsecration, and Asthabandha Brahmakalashabhisheka were performed on 4th March 2001 in a grand manner. Since then, religious rituals like Deepotsava, Annual festivals, and special poojas are being performed regularly to evoke the blessings of the almighty.</p>
+        
+
+        <h2><u>Religious Significance</u></h2>
+        <p >The temple is dedicated to Lord Harihareshwara, a fusion deity of Lord Vishnu (Hari) and Lord Shiva (Hara), symbolizing the synthesis of Shaivism and Vaishnavism. This dual representation is quite unique and reflects the inclusive nature of religious practices in the region.</p>
+
+        <h2><u>Heritage</u></h2>
+        <p>Over the centuries, the Harihareshwara Temple has served as a center of religious and cultural activities, attracting devotees and scholars alike. It has witnessed various phases of patronage and renovation by different rulers and local communities.</p><hr>
+
+        
+
+        <h1>Yearly Events of the Temple</h1>
+        
+
+        <h2 id="event"></h2>
+        <h2><u>Mahashivaratri</u></h2>
+        <p> Dedicated to Lord Shiva, is one of the most important festivals celebrated at the Harihareshwara Temple. Devotees gather in large numbers to offer prayers and perform rituals throughout the night. Special poojas (worship rituals), abhishekas (sacred bathing of the deity), and cultural programs are organized.<h2><u>Krishna Janmashtami</u></h2>
+        <p>This festival celebrates the birth of Lord Krishna, an incarnation of Lord Vishnu. Devotees observe fasts, sing devotional songs, and participate in celebrations that often include reenactments of Krishna's life events. The temple is adorned with decorations, and special offerings are made to the deity.</p>
+
+        <h2><u>Ekadashi</u></h2>
+        <p>This is observed on the 11th day of each lunar fortnight and holds significance in the Vaishnava tradition. Devotees fast and engage in spiritual practices to seek the blessings of Lord Vishnu. The temple conducts special rituals and discourses on the spiritual significance of Ekadashi.</p><hr>
+        <h2><u>HariHara Temple Timings:</u></h2>
+        <h4>07:00am-01:00pm.! Pooja=>12:15pm</h4>
+        <h4>05:00pm-08:00pm.! Pooja=>07:30pm</h4>
+        <h2><u>Vishnumurthy Temple Timings:</u></h2>
+        <h4>07:00am-01:00pm.! Pooja=>12:00pm</h4>
+        <h4>05:00pm-08:00pm.! Pooja=>07:15pm</h4><hr>
+
+        <h2 id="renovation">Recent Renovation</h2>
+        
+        <p> Renovation of Hari-Hara Kshetra was a huge challenge due to its dilapidated condition, 1 km away from Karnad. The committee formed under the leadership of Gurunath Bhat, MLC of the city, initiated the renovation in the year 2012-13 at a cost of Rs. 1 crore. The renovated temple was dedicated to the people on 18th April 2014 in the presence of Dr. Veerendra Heggade of Dharmasthala. The new building includes a hall for various activities and a 40x80 feet area for annadana and provision of funds by a resident of Mulki. As it is the temple of the people, the public is highly recommended to participate in the renovation, temple development, and the religious rituals of the temple. For the first time, Shri Hari Hara Kshetra, a holy pilgrimage center, offers the opportunity to celebrate Deepotsava, Tulasi Archana, Dhanurmasa rituals, Vidyarambha, and various religious rituals for the sake of the public.<br> It also offers an opportunity for the public to build a unique devotee in the name of their family and participate in religious rituals and to bring purity to their lives. The result of the renovation is that this Kshetra has become very famous all over the world. Since it was completed, a large number of people have been coming to Hari-Hara Kshetra. To have an arrester from all over India and be like them. Aradhakottara built up a new house and restructured its own day by day to use it, and set up a Kshetra at that time, the "Nandisur" near Shri Hari-Hara Kshetra. Deepotsava and Dhanurmasa were built at the Kshetra of Hari Hara Temple, a big house of the project.
+</p>
+<h1>Organizers of the Renovation</h1>
+        <ul class="organizers">
+            <li>M.R.H Punja</li>
+            <li>Abhaychandra Jain</li>
+            <li>Amaranath Shetty</li>
+        </ul>
+
+        <h2 class="organizers">President: M.R Punja</h2>
+
+        <table>
+            <tr>
+                <th>Proposed Budget</th>
+                <th>Estimated Budget</th>
+            </tr>
+            <tr>
+                <td>Sanctum Sanctorum (Garbhagudi)</td>
+                <td>Rs. 34,00,000</td>
+            </tr>
+            <tr>
+                <td>Thirtha Mantapa</td>
+                <td>Rs. 8,00,000</td>
+            </tr>
+            <tr>
+                <td>Front Exterior (Pauli) and Mukha Mantapa</td>
+                <td>Rs. 12,00,000</td>
+            </tr>
+            <tr>
+                <td>Rear Exterior</td>
+                <td>Rs. 5,00,000</td>
+            </tr>
+            <tr>
+                <td>North Exterior</td>
+                <td>Rs. 7,00,000</td>
+            </tr>
+            <tr>
+                <td>South Exterior</td>
+                <td>Rs. 7,00,000</td>
+            </tr>
+            <tr>
+                <td>Inner Yard (Olangana)</td>
+                <td>Rs. 3,00,000</td>
+            </tr>
+            <tr>
+                <td>Stone-slab Bedding, Aluminium Pandal</td>
+                <td>Rs. 5,00,000</td>
+            </tr>
+            <tr>
+                <td>Ganapathi Gudi</td>
+                <td>Rs. 2,00,000</td>
+            </tr>
+            <tr>
+                <td>Well</td>
+                <td>Rs. 1,00,000</td>
+            </tr>
+            <tr>
+                <td>Lighting</td>
+                <td>Rs. 1,00,000</td>
+            </tr>
+            <tr>
+                <td>Approximation</td>
+                <td>Rs. 8,500,000/-</td>
+            </tr>
+        </table>
+        
+        <p>The donors who are willing to contribute to the temple can contribute to the temple's donation fund account.</p><hr> 
+        <div class="photographs">
+            
+            <h2 id="photographs" class="section-title">Photographs</h2>
+            <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="shiva.jpeg" style="width:30%" height="30%">
+                <div class="caption">Shivalinga</div>
+            </div>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="oldphoto.jpeg.jpg" style="width:30%" height="30%">
+                <div class="caption">The Temple Before Renovation</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="temple.jpg" style="width:30%" height="30%">
+                <div class="caption">Garbhagudi</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="ganapathigudi.jpg" style="width:30%" height="30%">
+                <div class="caption">Ganapathi-Gudi</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gudi.jpeg.jpg" style="width:50%">
+                <div class="caption">Annappa Panjurli,Raktheshwari, Naaga deevara sannidhi</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="pond.jpeg.jpg" style="width:50%">
+                <div class="caption">Pond</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="poond.jpeg.jpg" style="width:50%">
+                <div class="caption">The large pond separating the temple</div>
+            </div>
+            
+           
+            <div class="mySlides fade">
+                <img src="vishnumrthy.jpeg.jpg" style="width:50%">
+                <div class="caption">Vishnumurthy Temple Exterior</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="vtemple.jpeg.jpg" style="width:30%" height="30%">
+                <div class="caption">Garbhagudi</div>
+            </div>
+ <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <br>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <hr>
+        <h2 id="location" class="section-title">Location</h2>
+        <div class="location">
+            
+            
+        
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.264819173252!2d74.78931927367361!3d13.082395912442331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba352b271a976cb%3A0x4e0cb4b3883819fb!2sHarihara%20Temple%20Rd%2C%20Karnad%2C%20Mulki%2C%20Karnataka%20574154!5e0!3m2!1sen!2sin!4v1722162201610!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy"></iframe>
+        <p>The Harihara Temple is located on the Karnad bypass road in Mulki, Dakshina Kannada district, Karnataka, India.</p>
+
+        <div class="footer">
+            <b>&copy; 2024 Harihara Temple, Karnad Mulky | Designed by Amrutha Poojary*</b>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
+        
+        
